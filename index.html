@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Gestão de Produtos Mari Pink💄</h1>
+    <h1>Gestão de Produtos Mari Pink 💄</h1>
 
     <form id="product-form">
       <input type="text" id="codigo" placeholder="Código" required />
@@ -40,23 +40,25 @@
       </thead>
       <tbody></tbody>
       <tfoot>
-  <tr>
-    <td colspan="4"><strong>Totais:</strong></td>
-    <td id="total-investido">R$ 0.00</td>
-    <td></td>
-    <td id="total-venda-potencial">R$ 0.00</td>
-    <td id="total-lucro-bruto">R$ 0.00</td>
-    <td id="total-lucro-liquido">R$ 0.00</td>
-  </tr>
-</tfoot>
+        <tr>
+          <td colspan="4"><strong>Totais:</strong></td>
+          <td id="total-investido">R$ 0.00</td>
+          <td></td>
+          <td id="total-venda-potencial">R$ 0.00</td>
+          <td id="total-lucro-bruto">R$ 0.00</td>
+          <td id="total-lucro-liquido">R$ 0.00</td>
+        </tr>
+      </tfoot>
     </table>
 
-    <!-- Botão para exportar PDF -->
-    <button onclick="gerarPDF()">Exportar para PDF</button>
+    <div class="botoes">
+      <button onclick="gerarPDF()">📄 Exportar para PDF</button>
+      <button onclick="baixarDados()">📤 Exportar Produtos (.json)</button>
+      <label for="importar-arquivo" class="botao-importar">📥 Importar Produtos (.json)</label>
+      <input type="file" id="importar-arquivo" accept=".json" style="display: none;" />
+    </div>
   </div>
 
   <script src="script.js"></script>
-  <button onclick="baixarDados()">📤 Exportar Produtos</button>
-  <input type="file" id="importar-arquivo" accept=".json" />
 </body>
 </html>
