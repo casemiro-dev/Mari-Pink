@@ -155,3 +155,37 @@ function gerarPDF() {
 
   doc.save("relatorio-produtos.pdf");
 }
+
+document.getElementById("importar-arquivo").addEventListener("change", function (event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    try {
+      const produtos = JSON.parse(e.target.result);
+      localStorage.setItem("produtos", JSON.stringify(produtos));
+
+      // Limpa a tabela atual
+      tableBody.innerHTML = "";
+
+      // Reinsere os produtos
+      produtos.forEach(produto => adicionarLinha(produto));
+      atualizarTotais();
+
+      alert("Produtos importados com sucesso!");
+    } catch (err) {
+      alert("Erro ao importar o arquivo. Verifique se é um JSON válido.");
+    }
+  };
+  reader.readAsText(file);
+});
+
+function baixarDados() {
+  const produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+  const blob = new Blob([JSON.stringify(produtos, null, 2)], { type: "application/json" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "produtos-mari-pink.json";
+  link.click();
+}
