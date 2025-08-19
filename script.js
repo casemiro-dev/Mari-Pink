@@ -165,14 +165,9 @@ document.getElementById("importar-arquivo").addEventListener("change", function 
     try {
       const produtos = JSON.parse(e.target.result);
       localStorage.setItem("produtos", JSON.stringify(produtos));
-
-      // Limpa a tabela atual
       tableBody.innerHTML = "";
-
-      // Reinsere os produtos
       produtos.forEach(produto => adicionarLinha(produto));
       atualizarTotais();
-
       alert("Produtos importados com sucesso!");
     } catch (err) {
       alert("Erro ao importar o arquivo. Verifique se é um JSON válido.");
