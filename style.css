@@ -62,3 +62,34 @@ tfoot td {
   font-weight: bold;
   background-color: #f8bbd0;
 }
+
+/*Botões*/
+button {
+  background-color: #ff69b4; /* rosa pink 💖 */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 8px 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #ff85c1;
+  box-shadow: 0 0 10px #ffb6d9;
+  transform: scale(1.05);
+}
+
+input[type="file"] {
+  margin: 8px 4px;
+  padding: 6px;
+  font-weight: bold;
+  color: #ff69b4;
+  border: 2px dashed #ff69b4;
+  border-radius: 8px;
+  background-color: #fff0f5;
+  cursor: pointer;
+}
