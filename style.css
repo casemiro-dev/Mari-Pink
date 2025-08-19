@@ -93,3 +93,68 @@ input[type="file"] {
   background-color: #fff0f5;
   cursor: pointer;
 }
+
+/* Estilo para o rodapé da tabela */
+tfoot td {
+  font-weight: bold;
+  background-color: #f8bbd0;
+  color: #880e4f;
+}
+
+/* Estilo para os botões agrupados */
+.botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Estilo para o botão de importar via label */
+.botao-importar {
+  background-color: #ff69b4;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.botao-importar:hover {
+  background-color: #ff85c1;
+  box-shadow: 0 0 10px #ffb6d9;
+  transform: scale(1.05);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+  }
+
+  form input, form button {
+    flex: 1 1 100%;
+  }
+
+  .botoes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  table, th, td {
+    font-size: 14px;
+  }
+}
+
+/* Animação leve ao carregar */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container, table, form, .botoes {
+  animation: fadeIn 0.6s ease-in-out;
+}
